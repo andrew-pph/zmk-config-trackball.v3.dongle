@@ -1,3 +1,4 @@
+#include <behaviors/input_gestures_accel.dtsi>
 #include "c0ba-trackball.dtsi"
 #include "c0ba-trackball-layouts.dtsi"
 #include "pmw3610.dtsi"
