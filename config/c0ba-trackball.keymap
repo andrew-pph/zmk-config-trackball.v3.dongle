@@ -72,7 +72,7 @@
 				 */
                         bindings = <
 						&trans
-				bt_sel_cl	&out  OUT_TOG
+				&bt_sel_cl	&out  OUT_TOG
                         >;
                 };
 	
