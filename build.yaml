@@ -1,14 +1,8 @@
 include:
   - board: nice_nano
-    shield: c0ba-trackball_right
+    shield: c0ba-trackball
     snippet: zmk-usb-logging
    
-  - board: nice_nano
-    shield: c0ba-trackball_dongle
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
-    snippet: zmk-usb-logging
-
   - board: nice_nano
     shield: settings_reset
  
