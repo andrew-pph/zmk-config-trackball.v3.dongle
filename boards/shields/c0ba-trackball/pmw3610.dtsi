@@ -61,12 +61,11 @@
 /*
 #include <dt-bindings/zmk/input_transform.h>
 #include <input/processors.dtsi>
-
+*/
 / {
   trackball_listener {
     compatible = "zmk,input-listener";
-    device = <&trackball>;
+//    device = <&trackball>;
     input-processors = <&zip_xy_scaler 1 2>;
   };
 };
-*/
