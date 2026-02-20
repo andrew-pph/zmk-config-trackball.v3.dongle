@@ -1,0 +1,11 @@
+file_format: "1"
+id: c0ba-trackball
+name: c0ba-trackball
+type: shield
+url: https://github.com/andrew-pph/zmk-config-trackball.v3.dongle
+requires: [nice_nano]
+features:
+  - keys
+  - trackball
+siblings:
+  - c0ba-trackball

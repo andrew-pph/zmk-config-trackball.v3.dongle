@@ -1,0 +1,15 @@
+#include <physical_layouts.dtsi>
+
+/ {
+    physical_layout0: physical_layout_0 {
+        compatible = "zmk,physical-layout";
+        transform = <&default_transform>;
+        display-name = "C0BA-Trackball";
+
+        keys  //                     w   h    x    y     rot    rx    ry
+            = <&key_physical_attrs 180 170  600    0       0     0     0>
+            , <&key_physical_attrs 180 170    0  200       0     0     0>
+            , <&key_physical_attrs 180 170  600  200       0     0     0>
+           ;
+    };
+};

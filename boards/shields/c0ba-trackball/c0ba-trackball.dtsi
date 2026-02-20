@@ -1,0 +1,16 @@
+#include <dt-bindings/zmk/matrix_transform.h>
+
+/ {
+    chosen {
+        zmk,physical-layout = &physical_layout0;
+    };
+    default_transform: keymap_transform_0 {
+        compatible = "zmk,matrix-transform";
+        columns = <2>;
+        rows = <2>;
+        map = <
+		           /*ball*/     RC(0,1)
+		RC(0,0)                 RC(0,2)
+        >;
+    };
+};

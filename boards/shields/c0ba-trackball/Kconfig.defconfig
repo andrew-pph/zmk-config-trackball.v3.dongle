@@ -1,0 +1,6 @@
+if SHIELD_C0BA_TRACKBALL
+config ZMK_POINTING
+    default y
+config ZMK_KEYBOARD_NAME
+	default "c0ba-trackball"
+endif
