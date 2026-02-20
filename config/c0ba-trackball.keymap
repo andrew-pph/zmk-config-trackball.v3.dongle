@@ -82,8 +82,8 @@
  * | BT_CLR   |   USB_BT_TOGGLE   |
  */
                         bindings = <
-						&mid
-				&bt_sel_cl      &out  OUT_TOG
+						&bt BT_CLR
+				&bt BT_SEL 0      &out  OUT_TOG
                         >;
                 };
         };
