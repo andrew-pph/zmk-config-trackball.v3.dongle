@@ -1,7 +1,11 @@
 include:
   - board: nice_nano
     shield: c0ba-trackball
-    snippet: zmk-usb-logging
+# Logging is incompatible with ZMK.Studio - won't compile if both are specified. 
+#    snippet: zmk-usb-logging
+# ZMK.Studio support:
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
    
   - board: nice_nano
     shield: settings_reset
