@@ -8,9 +8,10 @@
         compatible = "zmk,matrix-transform";
         columns = <2>;
         rows = <2>;
-        map = <
-		           /*ball*/     RC(0,1)
-		RC(0,0)                 RC(0,2)
+	        	/* ball */
+	map = <
+					RC(0,1)
+		RC(0,0)			RC(0,2)
         >;
     };
 };

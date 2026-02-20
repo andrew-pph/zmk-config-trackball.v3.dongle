@@ -21,8 +21,8 @@
 // layers
 
 #define MOUSE_L		0
-#define SCROLL_L 	1
-#define BT_L 		2
+#define BT_L 		1
+#define SCROLL_L 	2
 
 // Mouse speed increased
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1000  // default: 600
@@ -31,59 +31,60 @@
 
 
 / {
-    behaviors {
-        mid: tap_dance_0 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <500>;
-            bindings = <&mkp MB3>, <&to MOUSE_L>, <&to BT_L>;
-        };
-    };
-    macros {
-        bt_sel_cl: bt_sel_cl {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&bt BT_SEL 0>
-                , <&bt BT_CLR>
-		;
-        };
-    };
-        keymap {
+	behaviors {
+        	mid: tap_dance_0 {
+            		compatible = "zmk,behavior-tap-dance";
+            		#binding-cells = <0>;
+            		tapping-term-ms = <500>;
+            		bindings = <&mkp MB3>, <&to MOUSE_L>, <&to SCROLL_L>, <&to BT_L>;
+        	};
+	};
+	macros {
+		bt_sel_cl: bt_sel_cl {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings
+			= <&bt BT_SEL 0>
+			, <&bt BT_CLR>
+			;
+		};
+	};
+	keymap {
                 compatible = "zmk,keymap";
 
                 default_layer {
-/* MOUSE
- * -----------------
- * |       |   MMB   | 
- * | LMB   |   RMB   |
- */
+				/* MOUSE
+				 * -----------------
+				 * |       |   MMB   | 
+				 * | LMB   |   RMB   |
+				 */
                         bindings = <
 						&mid
 				&mkp MB1        &mkp MB2
+                        >;
+                };
+
+                bluetooth_layer {
+				/* BlueTooth setup layer
+				 * -----------------
+				 * |          |   MMB             | 
+				 * | BT_CLR   |   USB_BT_TOGGLE   |
+				 */
+                        bindings = <
+						&bt BT_CLR
+				&bt BT_SEL 0	&out  OUT_TOG
                         >;
                 };
 	
                 scroll_layer {
-/* SCROLL
- * -----------------
- * |       |   MMB   | 
- * | LMB   |   RMB   |
- */
+				/* SCROLL
+				 * -----------------
+				 * |       |   MMB   | 
+				 * | LMB   |   RMB   |
+				 */
                         bindings = <
-						&mid
-				&mkp MB1        &mkp MB2
-                        >;
-                };
-                bluetooth_layer {
-/* BlueTooth setup layer
- * -----------------
- * |          |   MMB             | 
- * | BT_CLR   |   USB_BT_TOGGLE   |
- */
-                        bindings = <
-						&bt BT_CLR
-				&bt BT_SEL 0      &out  OUT_TOG
+						&kp M
+				&kp L		&kp R
                         >;
                 };
         };
