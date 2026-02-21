@@ -34,7 +34,7 @@
 	behaviors {
 		hold_layer_press_mkp: layer_tap {
             		compatible = "zmk,behavior-hold-tap";
-            		#binding-cells = <0>;
+            		#binding-cells = <2>;
             		flavor = "tap-preferred";
             		tapping-term-ms = <100>;
             		bindings = <&mo>, <&mkp>;
