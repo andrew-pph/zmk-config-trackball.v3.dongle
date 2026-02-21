@@ -58,17 +58,6 @@
 
     };
 };
-/*
-#include <dt-bindings/zmk/input_transform.h>
-#include <input/processors.dtsi>
-*/
-/ {
-  trackball_listener {
-    compatible = "zmk,input-listener";
-    device = <&trackball>;
-//    input-processors = <&zip_xy_scaler 1 2>;
-  };
-};
 
 #include <input/processors.dtsi>
 #include <behaviors/input_gestures_accel.dtsi>
@@ -84,4 +73,24 @@
     speed-max = <300>;           // Max acceleration at 3500 counts/sec
     min-factor = <700>;          // 1.0x minimum (no deceleration)
     sensor-dpi = <1200>;           // 800 DPI sensor (optional, defaults to 800)
+};
+
+
+#include <dt-bindings/zmk/input_transform.h>
+#include <input/processors.dtsi>
+
+// {
+&trackball_listener {
+    compatible = "zmk,input-listener";
+    device = <&trackball>;
+//    input-processors = <&zip_xy_scaler 1 2>;
+
+    /* layer-2 trackball SCROLL_L scroller */
+    scroller_2: scroller_2 {
+        layers           = <1 2>;
+        input-processors = <
+            &zip_xy_scaler 1 15                              // Scales the scroll speed
+            &zip_xy_to_scroll_mapper                         // Converts XY movement to scroll events
+        >;
+    };
 };

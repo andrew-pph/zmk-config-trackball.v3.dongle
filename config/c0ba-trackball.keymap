@@ -43,19 +43,15 @@
         	mid: tap_dance_0 {
             		compatible = "zmk,behavior-tap-dance";
             		#binding-cells = <0>;
-            		tapping-term-ms = <500>;
+            		tapping-term-ms = <200>;
             		bindings = <&hold_layer_press_mkp SCROLL_L MB3>, <&to MOUSE_L>, <&tog SCROLL_L>, <&tog BT_L>;
         	};
-	};
-	macros {
-		bt_sel_cl: bt_sel_cl {
-			compatible = "zmk,behavior-macro";
-			#binding-cells = <0>;
-			bindings
-			= <&bt BT_SEL 0>
-			, <&bt BT_CLR>
-			;
-		};
+        	bt_1_tap_2: tap_dance_0 {
+            		compatible = "zmk,behavior-tap-dance";
+            		#binding-cells = <0>;
+            		tapping-term-ms = <200>;
+            		bindings = <&bt BT_SEL 1>, <&bt BT_SEL 2>;
+        	};
 	};
 	keymap {
                 compatible = "zmk,keymap";
@@ -80,7 +76,7 @@
 				 */
                         bindings = <
 						&trans
-				&bt_sel_cl	&out  OUT_TOG
+				&bt BT_CLR	&out  OUT_TOG
                         >;
                 };
 	
@@ -88,11 +84,11 @@
 				/* SCROLL
 				 * -----------------
 				 * |       |   MMB   | 
-				 * | LMB   |   RMB   |
+				 * | BT 1  |   BT 2  |
 				 */
                         bindings = <
 						&trans
-				&kp L        &kp R
+				&bt BT_SEL 0        &bt_1_tap_2
                         >;
                 };
         };
