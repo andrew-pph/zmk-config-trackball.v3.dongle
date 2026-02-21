@@ -36,20 +36,20 @@
             		compatible = "zmk,behavior-hold-tap";
             		#binding-cells = <2>;
             		flavor = "tap-preferred";
-            		tapping-term-ms = <100>;
+            		tapping-term-ms = <200>;
             		bindings = <&mo>, <&mkp>;
             		display-name = "Hold Layer";
         	};
         	mid: tap_dance_0 {
             		compatible = "zmk,behavior-tap-dance";
             		#binding-cells = <0>;
-            		tapping-term-ms = <200>;
+            		tapping-term-ms = <500>;
             		bindings = <&hold_layer_press_mkp SCROLL_L MB3>, <&to MOUSE_L>, <&tog SCROLL_L>, <&tog BT_L>;
         	};
         	bt_1_tap_2: tap_dance_1 {
             		compatible = "zmk,behavior-tap-dance";
             		#binding-cells = <0>;
-            		tapping-term-ms = <200>;
+            		tapping-term-ms = <500>;
             		bindings = <&bt BT_SEL 1>, <&bt BT_SEL 2>;
         	};
 	};
