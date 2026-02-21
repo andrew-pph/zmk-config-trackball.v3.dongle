@@ -32,17 +32,25 @@
 
 / {
 	behaviors {
+		hold_layer_press_mkp: layer_tap {
+            		compatible = "zmk,behavior-hold-tap";
+            		#binding-cells = <0>;
+            		flavor = "tap-preferred";
+            		tapping-term-ms = <100>;
+            		bindings = <&mo>, <&mkp>;
+            		display-name = "Hold Layer";
+        	};
         	mid: tap_dance_0 {
             		compatible = "zmk,behavior-tap-dance";
             		#binding-cells = <0>;
             		tapping-term-ms = <500>;
-            		bindings = <&mkp MB3>, <&to MOUSE_L>, <&to BT_L>;
+            		bindings = <&hold_layer_press_mkp SCROLL_L MB3>, <&to MOUSE_L>, <&to SCROLL_L>, <&to BT_L>;
         	};
 	};
 	macros {
 		bt_sel_cl: bt_sel_cl {
 			compatible = "zmk,behavior-macro";
-			#binding-cells = <0>;
+			#binding-cells = <1>;
 			bindings
 			= <&bt BT_SEL 0>
 			, <&bt BT_CLR>
@@ -52,7 +60,7 @@
 	keymap {
                 compatible = "zmk,keymap";
 
-                default_layer {
+                MOUSE_L {
 				/* MOUSE
 				 * -----------------
 				 * |       |   MMB   | 
@@ -64,7 +72,7 @@
                         >;
                 };
 
-                bluetooth_layer {
+                BT_L {
 				/* BlueTooth setup layer
 				 * -----------------
 				 * |          |   MMB             | 
@@ -76,7 +84,7 @@
                         >;
                 };
 	
-                scroll_layer {
+                SCROLL_L {
 				/* SCROLL
 				 * -----------------
 				 * |       |   MMB   | 
