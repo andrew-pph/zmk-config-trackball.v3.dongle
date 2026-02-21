@@ -89,6 +89,7 @@
     scroller_2: scroller_2 {
         layers           = <1 2>;
         input-processors = <
+	    &zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)
             &zip_xy_scaler 1 15                              // Scales the scroll speed
             &zip_xy_to_scroll_mapper                         // Converts XY movement to scroll events
         >;
