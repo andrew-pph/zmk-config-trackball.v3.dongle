@@ -90,7 +90,7 @@
         layers           = <1 2>;
         input-processors = <
 	    &zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)
-            &zip_xy_scaler 1 5                              // Scales the scroll speed
+            &zip_xy_scaler 1 30                              // Scales the scroll speed
             &zip_xy_to_scroll_mapper                         // Converts XY movement to scroll events
         >;
     };
