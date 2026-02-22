@@ -65,13 +65,13 @@
 &pointer_accel {
     input-type = <INPUT_EV_REL>;
     codes = <INPUT_REL_X INPUT_REL_Y>;
-    sensitivity = <1000>;         // 1.2x base sensitivity
+    sensitivity = <1000>;         // 1x base sensitivity
     max-factor = <3000>;          // 3.0x maximum acceleration
     acceleration-exponent = <3>;  // Advanced exponential curve (1-5)
     y-boost = <1300>;             // 1.3x Y-axis boost for widescreen
-    speed-threshold = <20>;      // Start acceleration at 600 counts/sec
-    speed-max = <300>;           // Max acceleration at 3500 counts/sec
-    min-factor = <700>;          // 1.0x minimum (no deceleration)
+    speed-threshold = <50>;      // Start acceleration at 50 counts/sec
+    speed-max = <300>;           // Max acceleration at 300 counts/sec
+    min-factor = <700>;          // 0.7x minimum (no deceleration)
     sensor-dpi = <1200>;           // 800 DPI sensor (optional, defaults to 800)
 };
 
@@ -90,7 +90,7 @@
         layers           = <1 2>;
         input-processors = <
 	    &zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)
-            &zip_xy_scaler 1 15                              // Scales the scroll speed
+            &zip_xy_scaler 1 5                              // Scales the scroll speed
             &zip_xy_to_scroll_mapper                         // Converts XY movement to scroll events
         >;
     };
