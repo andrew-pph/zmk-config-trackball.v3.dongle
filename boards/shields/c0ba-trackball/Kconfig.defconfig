@@ -3,4 +3,6 @@ config ZMK_POINTING
     default y
 config ZMK_KEYBOARD_NAME
 	default "c0ba-trackball"
+config USB_HID_POLL_INTERVAL_MS
+	default 10
 endif

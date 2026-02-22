@@ -66,8 +66,8 @@
     input-type = <INPUT_EV_REL>;
     codes = <INPUT_REL_X INPUT_REL_Y>;
     sensitivity = <1000>;         // 1x base sensitivity
-    max-factor = <3000>;          // 3.0x maximum acceleration
-    acceleration-exponent = <3>;  // Advanced exponential curve (1-5)
+    max-factor = <4500>;          // 3.0x maximum acceleration
+    acceleration-exponent = <4>;  // Advanced exponential curve (1-5)
     y-boost = <1300>;             // 1.3x Y-axis boost for widescreen
     speed-threshold = <50>;      // Start acceleration at 50 counts/sec
     speed-max = <300>;           // Max acceleration at 300 counts/sec
